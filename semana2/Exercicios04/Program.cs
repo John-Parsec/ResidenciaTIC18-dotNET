@@ -62,6 +62,6 @@ Console.WriteLine($"Data atual: {dataAtual.ToShortDateString()}");
 Console.WriteLine($"Data futuro: {dataFuturo.ToShortDateString()}");
 
 TimeSpan diferenca = dataFuturo - dataAtual;
-Console.WriteLine($"Diferença: {diferenca.ToString()}");
+Console.WriteLine($"Diferença: {diferenca.TotalMinutes}");
 
 #endregion
