@@ -20,5 +20,37 @@ Solicite entradas do usuário para criar, editar e excluir tarefas.
 Use strings para armazenar os títulos e descrições das tarefas.
 */
 
+class Tarefa{
+    private string titulo;
+    private string descricao;
+    private DateTime data;
+    private bool concluida;
 
 
+    public Tarefa(string titulo = "", string descricao = "", DateTime data = new DateTime(), bool concluida = false){
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.data = data;
+        this.concluida = concluida;
+    }
+
+    public string Titulo{
+        get{return titulo;}
+        set{titulo = value;}
+    }
+
+    public string Descricao{
+        get{return descricao;}
+        set{descricao = value;}
+    }
+
+    public DateTime Data{
+        get{return data;}
+        set{data = value;}
+    }
+
+    public bool Concluida{
+        get{return concluida;}
+        set{concluida = value;}
+    }
+}
