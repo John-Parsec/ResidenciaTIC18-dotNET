@@ -175,9 +175,7 @@ public class Estoque{
                 throw new Exception("Quantidade deve ser maior ou igual a zero");
             }
 
-            var products = from p in Products
-                           where p.Qty < maxQty
-                           select p;
+            var products = Products.Where(p => p.Qty < maxQty);
 
             Console.WriteLine($"Produtos com quantidade abaixo de {maxQty}:");
             Console.WriteLine($"Id\t\tNome\t\tQtde\tPreço");
@@ -206,10 +204,8 @@ public class Estoque{
             if(maxPrice < 0){
                 throw new Exception("Preço deve ser maior ou igual a zero");
             }
-
-            var products = from p in Products
-                           where p.Price >= minPrice && p.Price <= maxPrice
-                           select p;
+            
+            var products = Products.Where(p => p.Price >= minPrice && p.Price <= maxPrice);
 
             Console.WriteLine($"Produtos com preço entre {minPrice} e {maxPrice}:");
             Console.WriteLine($"Id\t\tNome\t\tQtde\tPreço");
@@ -239,11 +235,13 @@ public class Estoque{
     }
 
     public void totalStockValueByProduct(){
-        try{
+        Func<Produto, double> total = p => p.Price * p.Qty;
 
+        try{
+            
             Console.WriteLine($"Id\t\tNome\t\tQtde\tPreço\tTotal");
             foreach(Produto p in Products){
-                Console.WriteLine($"{p.Id}\t\t{p.Name}\t\t{p.Qty}\t{p.Price}\t{p.Price * p.Qty}");
+                Console.WriteLine($"{p.Id}\t\t{p.Name}\t\t{p.Qty}\t{p.Price}\t{total(p)}");
             }
 
         }catch(Exception e){
