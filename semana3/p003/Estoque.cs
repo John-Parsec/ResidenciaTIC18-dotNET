@@ -42,9 +42,10 @@ public class Estoque{
     }
 
     public void listProducts(){
-        Console.WriteLine("Produtos cadastrados:");
+        Console.WriteLine("Produtos cadastrados:\n");
+        Console.WriteLine($"Id\t\tNome\t\tQtde\tPreço");
         foreach(Produto p in Products){
-            Console.WriteLine(p);
+            Console.WriteLine($"{p.Id}\t\t{p.Name}\t\t{p.Qty}\t{p.Price}");
         }
     }
 
@@ -179,9 +180,9 @@ public class Estoque{
                            select p;
 
             Console.WriteLine($"Produtos com quantidade abaixo de {maxQty}:");
-            Console.WriteLine($"Nome\tQtde\tPreço");
+            Console.WriteLine($"Id\t\tNome\t\tQtde\tPreço");
             foreach(Produto p in products){
-                Console.WriteLine($"{p.Name}\t{p.Qty}\t{p.Price}");
+                Console.WriteLine($"{p.Id}\t\t{p.Name}\t\t{p.Qty}\t{p.Price}");
             }
 
         }catch(Exception e){
@@ -211,9 +212,9 @@ public class Estoque{
                            select p;
 
             Console.WriteLine($"Produtos com preço entre {minPrice} e {maxPrice}:");
-            Console.WriteLine($"Nome\tQtde\tPreço");
+            Console.WriteLine($"Id\t\tNome\t\tQtde\tPreço");
             foreach(Produto p in products){
-                Console.WriteLine($"{p.Name}\t{p.Qty}\t{p.Price}");
+                Console.WriteLine($"{p.Id}\t\t{p.Name}\t\t{p.Qty}\t{p.Price}");
             }
 
         }catch(Exception e){
@@ -240,9 +241,9 @@ public class Estoque{
     public void totalStockValueByProduct(){
         try{
 
-            Console.WriteLine($"Nome\tQtde\tPreço\tTotal");
+            Console.WriteLine($"Id\t\tNome\t\tQtde\tPreço\tTotal");
             foreach(Produto p in Products){
-                Console.WriteLine($"{p.Name}\t{p.Qty}\t{p.Price}\t{p.Price * p.Qty}");
+                Console.WriteLine($"{p.Id}\t\t{p.Name}\t\t{p.Qty}\t{p.Price}\t{p.Price * p.Qty}");
             }
 
         }catch(Exception e){
