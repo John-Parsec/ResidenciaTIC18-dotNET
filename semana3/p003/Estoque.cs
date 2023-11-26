@@ -59,7 +59,7 @@ public class Estoque{
                 throw new Exception("Produto não encontrado");
             }
 
-            Console.WriteLine(p);
+            Console.WriteLine(p.Name);
 
         }catch(Exception e){
             Console.WriteLine($"Erro: {e.Message}");
@@ -74,7 +74,7 @@ public class Estoque{
                 throw new Exception("Produto não encontrado");
             }
 
-            Console.WriteLine(p);
+            Console.WriteLine(p.Name);
 
         }catch(Exception e){
             Console.WriteLine($"Erro: {e.Message}");
@@ -163,5 +163,93 @@ public class Estoque{
     }
 
 
-    
+
+    public void listProductsByQty(){
+        try{
+
+            Console.Write("Quantidade máxima: ");
+            int maxQty = int.Parse(Console.ReadLine()!);
+
+            if(maxQty < 0){
+                throw new Exception("Quantidade deve ser maior ou igual a zero");
+            }
+
+            var products = from p in Products
+                           where p.Qty < maxQty
+                           select p;
+
+            Console.WriteLine($"Produtos com quantidade abaixo de {maxQty}:");
+            Console.WriteLine($"Nome\tQtde\tPreço");
+            foreach(Produto p in products){
+                Console.WriteLine($"{p.Name}\t{p.Qty}\t{p.Price}");
+            }
+
+        }catch(Exception e){
+            Console.WriteLine($"Erro: {e.Message}");
+        }
+    }
+
+    public void listProductsByPrice(){
+        try{
+
+            Console.Write("Preço mínimo: ");
+            double minPrice = double.Parse(Console.ReadLine()!);
+
+            if(minPrice < 0){
+                throw new Exception("Preço deve ser maior ou igual a zero");
+            }
+
+            Console.Write("Preço máximo: ");
+            double maxPrice = double.Parse(Console.ReadLine()!);
+
+            if(maxPrice < 0){
+                throw new Exception("Preço deve ser maior ou igual a zero");
+            }
+
+            var products = from p in Products
+                           where p.Price >= minPrice && p.Price <= maxPrice
+                           select p;
+
+            Console.WriteLine($"Produtos com preço entre {minPrice} e {maxPrice}:");
+            Console.WriteLine($"Nome\tQtde\tPreço");
+            foreach(Produto p in products){
+                Console.WriteLine($"{p.Name}\t{p.Qty}\t{p.Price}");
+            }
+
+        }catch(Exception e){
+            Console.WriteLine($"Erro: {e.Message}");
+        }
+    }
+
+
+    public void totalStockValue(){
+        try{
+
+            double total = 0;
+            foreach(Produto p in Products){
+                total += p.Price * p.Qty;
+            }
+
+            Console.WriteLine($"Valor total do estoque: {total}");
+
+        }catch(Exception e){
+            Console.WriteLine($"Erro: {e.Message}");
+        }
+    }
+
+    public void totalStockValueByProduct(){
+        try{
+
+            Console.WriteLine($"Nome\tQtde\tPreço\tTotal");
+            foreach(Produto p in Products){
+                Console.WriteLine($"{p.Name}\t{p.Qty}\t{p.Price}\t{p.Price * p.Qty}");
+            }
+
+        }catch(Exception e){
+            Console.WriteLine($"Erro: {e.Message}");
+        }
+    }
+
+
+
 }
