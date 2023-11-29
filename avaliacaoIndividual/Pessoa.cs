@@ -33,6 +33,7 @@ public class Pessoa{
     public Pessoa(string nome, string dataNascimento, string cpf){
         this.Nome = nome;
         this.DataNascimento = DateTime.Parse(dataNascimento);
+        this.setCPF(cpf);
     }
 
 }
