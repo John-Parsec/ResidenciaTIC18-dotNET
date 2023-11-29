@@ -18,12 +18,17 @@ consultorio.addMedico(medico2);
 
 
 Paciente paciente = new Paciente("Arthur", DateTime.Parse("15/09/2001"), "16724538267", "Masculino");
-Paciente paciente2 = new Paciente("Rafaela", "09/3/2003", "92076145302", "F");
+
+try{
+    Paciente paciente2 = new Paciente("Rafaela", "09/3/2003", "92076145302", "F");
+}catch(Exception e){
+    Console.WriteLine(e.Message);
+}
+
 Paciente paciente3 = new Paciente("Rafaela", "09/3/2003", "92076145302", "Feminino");
 
 
 consultorio.addPaciente(paciente);
-consultorio.addPaciente(paciente2);
 consultorio.addPaciente(paciente3);
 
 Console.WriteLine("Médicos:");
