@@ -111,4 +111,160 @@ public class Consultorio{
             Console.WriteLine($"Nome: {p.Nome} | Data de Nascimento: {p.DataNascimento} | CPF: {p.getCPF()} | Sexo: {p.Sexo}");
         }
     }
+
+
+    public void menu(){
+        int opcao;
+
+        do{
+            Console.WriteLine("1 - Cadastrar Médico");
+            Console.WriteLine("2 - Cadastrar Paciente");
+            Console.WriteLine("3 - Listar Médicos");
+            Console.WriteLine("4 - Listar Pacientes");
+            Console.WriteLine("5 - Médicos entre idades");
+            Console.WriteLine("6 - Pacientes entre idades");
+            Console.WriteLine("7 - Pacientes pelo sexo");
+            Console.WriteLine("8 - Pacientes em ordem alfabética");
+            Console.WriteLine("9 - Pacientes pelo sintoma");
+            Console.WriteLine("10 - Aniversariantes do mês");
+            Console.WriteLine("0 - Sair");
+
+            Console.Write("Digite uma opção: ");
+            opcao = int.Parse(Console.ReadLine()!);
+
+            switch(opcao){
+                case 1:
+                    try{
+                        Console.Write("Digite o nome do médico: ");
+                        string nomeMedico = Console.ReadLine()!;
+
+                        Console.Write("Digite a data de nascimento do médico: ");
+                        DateTime dataNascimentoMedico = DateTime.Parse(Console.ReadLine()!);
+
+                        Console.Write("Digite o CPF do médico: ");
+                        string cpfMedico = Console.ReadLine()!;
+
+                        Console.Write("Digite o CRM do médico: ");
+                        string crmMedico = Console.ReadLine()!;
+
+                        Medico medico = new Medico(nomeMedico, dataNascimentoMedico, cpfMedico, crmMedico);
+
+                        this.addMedico(medico);
+                    }catch(Exception e){
+                        Console.WriteLine(e.Message);
+                    }
+                    break;
+
+                case 2:
+                    try{
+                        Console.Write("Digite o nome do paciente: ");
+                        string nomePaciente = Console.ReadLine()!;
+
+                        Console.Write("Digite a data de nascimento do paciente: ");
+                        DateTime dataNascimentoPaciente = DateTime.Parse(Console.ReadLine()!);
+
+                        Console.Write("Digite o CPF do paciente: ");
+                        string cpfPaciente = Console.ReadLine()!;
+
+                        Console.Write("Digite o sexo do paciente: ");
+                        string sexoPaciente = Console.ReadLine()!;
+
+                        Paciente paciente = new Paciente(nomePaciente, dataNascimentoPaciente, cpfPaciente, sexoPaciente);
+
+                        this.addPaciente(paciente);
+                    }catch(Exception e){
+                        Console.WriteLine(e.Message);
+                    }
+                    break;
+                
+                case 3:
+                    Console.WriteLine("Médicos:");
+                    foreach (Medico m in this.Medicos){
+                        Console.WriteLine($"Nome: {m.Nome} | Data de Nascimento: {m.DataNascimento} | CPF: {m.getCPF()} | CRM: {m.CRM}");
+                    }
+                    break;
+
+                case 4:
+                    Console.WriteLine("Pacientes:");
+                    foreach (Paciente p in this.Pacientes){
+                        Console.WriteLine($"Nome: {p.Nome} | Data de Nascimento: {p.DataNascimento} | CPF: {p.getCPF()} | Sexo: {p.Sexo}");
+                    }
+                    break;
+                
+                case 5:
+                    try{
+                        Console.Write("Digite a idade mínima: ");
+                        int min = int.Parse(Console.ReadLine()!);
+
+                        Console.Write("Digite a idade máxima: ");
+                        int max = int.Parse(Console.ReadLine()!);
+
+                        this.medicosIdadeEntre(min, max);
+                    }catch(Exception e){
+                        Console.WriteLine(e.Message);
+                    }
+                    break;
+                
+                case 6:
+                    try{
+                        Console.Write("Digite a idade mínima: ");
+                        int min = int.Parse(Console.ReadLine()!);
+
+                        Console.Write("Digite a idade máxima: ");
+                        int max = int.Parse(Console.ReadLine()!);
+
+                        this.pacientesIdadeEntre(min, max);
+                    }catch(Exception e){
+                        Console.WriteLine(e.Message);
+                    }
+                    break;
+
+                case 7:
+                    try{
+                        Console.Write("Digite o sexo: ");
+                        string sexo = Console.ReadLine()!;
+
+                        this.pacientesPorSexo(sexo);
+                    }catch(Exception e){
+                        Console.WriteLine(e.Message);
+                    }
+                    break;
+
+                case 8:
+                    this.pacientesOrdemAlfabetica();
+                    break;
+
+                case 9:
+                    try{
+                        Console.Write("Digite o sintoma: ");
+                        string sintoma = Console.ReadLine()!;
+
+                        this.pacientesComSintoma(sintoma);
+                    }catch(Exception e){
+                        Console.WriteLine(e.Message);
+                    }
+                    break;
+
+                case 10:
+                    try{
+                        Console.Write("Digite o mês: ");
+                        int mes = int.Parse(Console.ReadLine()!);
+
+                        this.aniversariantesDoMes(mes);
+                    }catch(Exception e){
+                        Console.WriteLine(e.Message);
+                    }
+                    break;
+
+                case 0:
+                    break;
+                    
+                default:
+                    Console.WriteLine("Opção inválida");
+                    break;
+            }
+
+        }while(opcao > 10);
+
+    }
 }

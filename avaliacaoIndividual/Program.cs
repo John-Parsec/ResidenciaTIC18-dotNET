@@ -1,6 +1,10 @@
 ﻿using avaliacaoIndividual;
 
+
 Consultorio consultorio = new Consultorio();
+
+//Para testar com menu:
+//Consultorio.menu();
 
 Medico medico = new Medico("João", "01/01/2000", "12345678901", "123456");
 Medico medica = new Medico();
@@ -79,4 +83,8 @@ try{
 }
 
 consultorio.aniversariantesDoMes(11);
+
+
+//Para testar com menu:
+//Consultorio.menu();
 
