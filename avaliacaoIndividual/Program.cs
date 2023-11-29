@@ -86,5 +86,5 @@ consultorio.aniversariantesDoMes(11);
 
 
 //Para testar com menu:
-//Consultorio.menu();
+consultorio.menu();
 

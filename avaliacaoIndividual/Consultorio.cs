@@ -117,6 +117,7 @@ public class Consultorio{
         int opcao;
 
         do{
+            Console.WriteLine("\nMenu:");
             Console.WriteLine("1 - Cadastrar Médico");
             Console.WriteLine("2 - Cadastrar Paciente");
             Console.WriteLine("3 - Listar Médicos");
@@ -258,13 +259,12 @@ public class Consultorio{
 
                 case 0:
                     break;
-                    
+
                 default:
                     Console.WriteLine("Opção inválida");
                     break;
             }
 
-        }while(opcao > 10);
-
+        }while(opcao != 10);
     }
 }
