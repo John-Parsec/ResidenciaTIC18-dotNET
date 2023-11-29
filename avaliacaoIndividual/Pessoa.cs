@@ -11,11 +11,15 @@ public class Pessoa{
     }
 
     public void setCPF(string cpf){
-        if(cpf.Length != 11){
-            throw new Exception("CPF deve ter 11 dígitos");
-        }
+        try{
+            if(cpf.Length != 11){
+                throw new Exception("CPF deve ter 11 dígitos");
+            }
 
-        this.cpf = cpf;
+            this.cpf = cpf;
+        }catch(Exception e){
+            Console.WriteLine(e.Message);
+        }
     }
 
     public Pessoa(){

@@ -6,10 +6,14 @@ public class Paciente : Pessoa{
             return Sexo;
         } 
         set{
-            if(value != "Masculino" && value != "Feminino"){
-                throw new System.Exception("Sexo deve ser Masculino ou Feminino");
+            try{
+                if(value != "Masculino" && value != "Feminino"){
+                    throw new System.Exception("Sexo deve ser Masculino ou Feminino");
+                }
+                Sexo = value;
+            }catch(System.Exception e){
+                Console.WriteLine(e.Message);
             }
-            Sexo = value;
         } 
     }
     List<string> Sintomas { get; }
