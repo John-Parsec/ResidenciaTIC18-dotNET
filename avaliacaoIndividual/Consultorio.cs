@@ -82,7 +82,7 @@ public class Consultorio{
     public void pacientesComSintoma(string sintoma){
         List<Paciente> pacientes = new List<Paciente>();
 
-        pacientes = this.Pacientes.FindAll(p => p.Sintomas.Contains(sintoma));
+        pacientes = this.Pacientes.FindAll(p => p.Sintomas.Contains(sintoma.ToLower()));
 
         Console.WriteLine($"Pacientes com o sintoma {sintoma}:");
         foreach (Paciente p in pacientes){
@@ -90,19 +90,23 @@ public class Consultorio{
         }
     }
 
-    public void aniversariantesDoMes(){
+    public void aniversariantesDoMes(int mes){
+        if(mes < 1 || mes > 12){
+            throw new System.Exception("Mês inválido");
+        }
+
         List<Paciente> pacientes = new List<Paciente>();
         List<Medico> medicos = new List<Medico>();
 
-        pacientes = this.Pacientes.FindAll(p => p.DataNascimento.Month == DateTime.Now.Month);
-        medicos = this.Medicos.FindAll(m => m.DataNascimento.Month == DateTime.Now.Month);
+        pacientes = this.Pacientes.FindAll(p => p.DataNascimento.Month == mes);
+        medicos = this.Medicos.FindAll(m => m.DataNascimento.Month == mes);
 
-        Console.WriteLine($"Médicos aniversariantes do mês:");
+        Console.WriteLine($"Médicos aniversariantes do mês {mes}:");
         foreach (Medico m in medicos){
             Console.WriteLine($"Nome: {m.Nome} | Data de Nascimento: {m.DataNascimento} | CPF: {m.getCPF()} | CRM: {m.CRM}");
         }
 
-        Console.WriteLine($"Pacientes aniversariantes do mês:");
+        Console.WriteLine($"Pacientes aniversariantes do mês {mes}:");
         foreach (Paciente p in pacientes){
             Console.WriteLine($"Nome: {p.Nome} | Data de Nascimento: {p.DataNascimento} | CPF: {p.getCPF()} | Sexo: {p.Sexo}");
         }

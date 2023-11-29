@@ -26,6 +26,6 @@ public class Paciente : Pessoa{
     }
 
     public void addSintoma(string sintoma){
-        this.Sintomas.Add(sintoma);
+        this.Sintomas.Add(sintoma.ToLower());
     }
 }
