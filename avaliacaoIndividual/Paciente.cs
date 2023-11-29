@@ -13,7 +13,7 @@ public class Paciente : Pessoa{
             sexo = value;
         } 
     }
-    List<string> Sintomas { get; }
+    public List<string> Sintomas { get; }
 
     public Paciente(string nome, DateTime dataNascimento, string cpf, string sexo) : base(nome, dataNascimento, cpf){
         this.Sexo = sexo.ToLower();
