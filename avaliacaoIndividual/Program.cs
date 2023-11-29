@@ -10,6 +10,13 @@ medica.DataNascimento = DateTime.Parse("01/11/1990");
 medica.setCPF("12345654321");
 medica.CRM = "987654";
 
+try{
+    medica.DataNascimento = DateTime.Parse("01/11/2021");
+}
+catch(Exception e){
+    Console.WriteLine(e.Message);
+}
+
 consultorio.addMedico(medico);
 consultorio.addMedico(medica);
 

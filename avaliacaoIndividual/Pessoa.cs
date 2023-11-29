@@ -2,7 +2,18 @@ namespace avaliacaoIndividual;
 
 public class Pessoa{
     public string? Nome { get; set; }
-    public DateTime DataNascimento { get; set; }
+
+    protected DateTime dataNascimento;
+    public virtual DateTime DataNascimento { get{
+            return dataNascimento;
+        }
+        set{
+            if(value > DateTime.Now){
+                throw new Exception("Data de nascimento deve ser anterior a data atual");
+            }
+            dataNascimento = value;
+        } 
+    }
 
     private string? cpf;
 
