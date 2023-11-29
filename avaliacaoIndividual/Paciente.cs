@@ -1,16 +1,17 @@
 using avaliacaoIndividual;
 public class Paciente : Pessoa{
+    private string? sexo;
 
-    public string Sexo {
+    public string? Sexo {
         get{
-            return Sexo;
+            return sexo;
         } 
         set{
             try{
-                if(value != "Masculino" && value != "Feminino"){
+                if(value != "masculino" && value != "feminino"){
                     throw new System.Exception("Sexo deve ser Masculino ou Feminino");
                 }
-                Sexo = value;
+                sexo = value;
             }catch(System.Exception e){
                 Console.WriteLine(e.Message);
             }
@@ -19,17 +20,22 @@ public class Paciente : Pessoa{
     List<string> Sintomas { get; }
 
     public Paciente(string nome, DateTime dataNascimento, string cpf, string sexo) : base(nome, dataNascimento, cpf){
-        this.Sexo = sexo;
+        try{
+            this.Sexo = sexo;
+        }catch(System.Exception e){
+            Console.WriteLine(e.Message);
+        }
+
         this.Sintomas  = new List<string>();
     }
 
     public Paciente(string nome, string dataNascimento, string cpf, string sexo) : base(nome, dataNascimento, cpf){
-        this.Sexo = sexo;
-        this.Sintomas  = new List<string>();
-    }
+        try{
+            this.Sexo = sexo;
+        }catch(System.Exception e){
+            Console.WriteLine(e.Message);
+        }
 
-    public Paciente(){
-        this.Sexo = "";
         this.Sintomas  = new List<string>();
     }
 

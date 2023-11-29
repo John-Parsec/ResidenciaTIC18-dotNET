@@ -15,3 +15,25 @@ consultorio.addMedico(medica);
 
 Medico medico2 = new Medico("Helder", "01/01/1990", "12345678901", "123456");
 consultorio.addMedico(medico2);
+
+
+Paciente paciente = new Paciente("Arthur", DateTime.Parse("15/09/2001"), "16724538267", "Masculino");
+Paciente paciente2 = new Paciente("Rafaela", "09/3/2003", "92076145302", "F");
+Paciente paciente3 = new Paciente("Rafaela", "09/3/2003", "92076145302", "Feminino");
+
+
+consultorio.addPaciente(paciente);
+consultorio.addPaciente(paciente2);
+consultorio.addPaciente(paciente3);
+
+Console.WriteLine("Médicos:");
+foreach (Medico m in consultorio.Medicos){
+    Console.WriteLine($"Nome: {m.Nome} | Data de Nascimento: {m.DataNascimento} | CPF: {m.getCPF()} | CRM: {m.CRM}");
+}
+
+Console.WriteLine("\nPacientes:");
+foreach (Paciente p in consultorio.Pacientes){
+    Console.WriteLine($"Nome: {p.Nome} | Data de Nascimento: {p.DataNascimento} | CPF: {p.getCPF()} | Sexo: {p.Sexo}");
+}
+
+

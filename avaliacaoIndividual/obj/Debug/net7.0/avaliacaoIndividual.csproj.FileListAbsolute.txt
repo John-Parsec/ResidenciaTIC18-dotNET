@@ -1,0 +1,15 @@
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/bin/Debug/net7.0/avaliacaoIndividual
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/bin/Debug/net7.0/avaliacaoIndividual.deps.json
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/bin/Debug/net7.0/avaliacaoIndividual.runtimeconfig.json
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/bin/Debug/net7.0/avaliacaoIndividual.dll
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/bin/Debug/net7.0/avaliacaoIndividual.pdb
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/obj/Debug/net7.0/avaliacaoIndividual.csproj.AssemblyReference.cache
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/obj/Debug/net7.0/avaliacaoIndividual.GeneratedMSBuildEditorConfig.editorconfig
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/obj/Debug/net7.0/avaliacaoIndividual.AssemblyInfoInputs.cache
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/obj/Debug/net7.0/avaliacaoIndividual.AssemblyInfo.cs
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/obj/Debug/net7.0/avaliacaoIndividual.csproj.CoreCompileInputs.cache
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/obj/Debug/net7.0/avaliacaoIndividual.dll
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/obj/Debug/net7.0/refint/avaliacaoIndividual.dll
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/obj/Debug/net7.0/avaliacaoIndividual.pdb
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/obj/Debug/net7.0/avaliacaoIndividual.genruntimeconfig.cache
+/home/joao-manoel-oliveira/Documentos/ResidenciaTIC18-dotNET/avaliacaoIndividual/obj/Debug/net7.0/ref/avaliacaoIndividual.dll
