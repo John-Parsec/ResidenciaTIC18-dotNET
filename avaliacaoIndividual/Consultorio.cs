@@ -36,4 +36,37 @@ public class Consultorio{
         }
     }
 
+    public void medicosIdadeEntre(int min, int max){
+        List<Medico> medicos = new List<Medico>();
+
+        medicos = this.Medicos.FindAll(m => m.Idade >= min && m.Idade <= max);
+
+        Console.WriteLine($"Médicos entre {min} e {max} anos:");
+        foreach (Medico m in medicos){
+            Console.WriteLine($"Nome: {m.Nome} | Data de Nascimento: {m.DataNascimento} | CPF: {m.getCPF()} | CRM: {m.CRM}");
+        }
+    }
+
+    public void pacientesIdadeEntre(int min, int max){
+        List<Paciente> pacientes = new List<Paciente>();
+
+        pacientes = this.Pacientes.FindAll(p => p.Idade >= min && p.Idade <= max);
+
+        Console.WriteLine($"Pacientes entre {min} e {max} anos:");
+        foreach (Paciente p in pacientes){
+            Console.WriteLine($"Nome: {p.Nome} | Data de Nascimento: {p.DataNascimento} | CPF: {p.getCPF()} | Sexo: {p.Sexo}");
+        }
+    }
+
+    public void pacientesPorSexo(string sexo){
+        List<Paciente> pacientes = new List<Paciente>();
+
+        pacientes = this.Pacientes.FindAll(p => p.Sexo == sexo.ToLower());
+
+        Console.WriteLine($"Pacientes do sexo {sexo}:");
+        foreach (Paciente p in pacientes){
+            Console.WriteLine($"Nome: {p.Nome} | Data de Nascimento: {p.DataNascimento} | CPF: {p.getCPF()} | Sexo: {p.Sexo}");
+        }
+    }
+
 }
