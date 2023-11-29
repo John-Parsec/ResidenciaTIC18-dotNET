@@ -5,6 +5,8 @@ public class Pessoa{
     public DateTime DataNascimento { get; set; }
 
     private string? cpf;
+
+    public int Idade => DateTime.Now.Year - this.DataNascimento.Year;
     
     public string? getCPF(){
         return cpf;
